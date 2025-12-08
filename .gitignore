@@ -1,0 +1,73 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# SQLite databases
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+*.code-workspace
+
+# =========================
+# OS files
+# =========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# =========================
+# Logs & temp files
+# =========================
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+*.pid
+
+# =========================
+# Test / cache
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Build artifacts
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Optional exports
+# =========================
+*.csv
+*.json
