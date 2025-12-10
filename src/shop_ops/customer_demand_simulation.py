@@ -2,7 +2,7 @@ from src.shop_ops.customer_order_generator import CustomerOrderGenerator
 from src.shop_ops.day_result import DayResult
 
 
-class DaySimulation:
+class CustomerDemandSimulation:
     def __init__(self, order_generator: CustomerOrderGenerator):
         self._generator = order_generator
 

@@ -1,5 +1,5 @@
 import pytest
-from src.shop_ops.day_simulation import DaySimulation
+from src.shop_ops.customer_demand_simulation import CustomerDemandSimulation
 from src.shop_ops.customer_order import CustomerOrder, CustomerOrderStatus
 from src.shop_ops.warehouse import Warehouse
 from src.shop_ops.product import Product
@@ -47,7 +47,7 @@ class TestDaySimulation:
         ]
 
         order_generator = FakeOrderGenerator(orders)
-        simulation = DaySimulation(order_generator)
+        simulation = CustomerDemandSimulation(order_generator)
 
         starting_budget = shop.budget
         total_quantity = sum(order.quantity for order in orders)
@@ -104,7 +104,7 @@ class TestDaySimulation:
         ]  # razem 15, stock = 10
 
         order_generator = FakeOrderGenerator(orders)
-        simulation = DaySimulation(order_generator)
+        simulation = CustomerDemandSimulation(order_generator)
 
         starting_budget = shop.budget
         starting_stock = warehouse.get_quantity(product)
@@ -161,7 +161,7 @@ class TestDaySimulation:
         orders: list[CustomerOrder] = []  # brak zamówień
 
         order_generator = FakeOrderGenerator(orders)
-        simulation = DaySimulation(order_generator)
+        simulation = CustomerDemandSimulation(order_generator)
 
         starting_budget = shop.budget
         starting_stock = warehouse.get_quantity(product)

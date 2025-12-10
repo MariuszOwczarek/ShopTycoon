@@ -1,5 +1,5 @@
 from src.shop_ops.customer_order_generator import CustomerOrderGenerator
-from src.shop_ops.day_simulation import DaySimulation
+from src.shop_ops.customer_demand_simulation import CustomerDemandSimulation
 from src.shop_ops.product import Product
 from src.shop_ops.shop import Shop
 from src.shop_ops.warehouse import Warehouse
@@ -32,14 +32,14 @@ def create_shop_with_initial_stock(products: list[Product]) -> Shop:
     warehouse = Warehouse(capacity=500.0)
 
     for product in products:
-        warehouse.add_stock(product, 30)
+        warehouse.add_stock(product, 200)
 
     shop = Shop(warehouse, budget=1000)
     return shop
 
 
 def create_order_generator() -> CustomerOrderGenerator:
-    generator = CustomerOrderGenerator(3, 15, 1, 8, seed=123)
+    generator = CustomerOrderGenerator(3, 12, 1, 6, seed=123)
     return generator
 
 
@@ -47,7 +47,7 @@ def run_simulation(num_days: int):
     products = create_default_products()
     shop = create_shop_with_initial_stock(products)
     order_generator = create_order_generator()
-    simulation = DaySimulation(order_generator)
+    simulation = CustomerDemandSimulation(order_generator)
 
     print(f"Budget (Start): {shop.budget}         Warehouse (Start):"
           f"{[shop.warehouse.get_quantity(product) for product in products]}")
